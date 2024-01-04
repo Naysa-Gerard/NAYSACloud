@@ -11,7 +11,7 @@ class VATController extends Controller
 {
     public function getdata()
     {
-        $data = DB::select("select * from vat");
+        $data = DB::select("select * from ar_cust");
         $jsonData = json_encode($data);
 
         return new Response($jsonData, 200, ['Content-Type' => 'application/json']);
