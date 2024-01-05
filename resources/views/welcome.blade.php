@@ -147,9 +147,8 @@
 
 function Convert(){
     const coadataTable = $('#ChartOfAccounts_dt').DataTable();
-
-  const jsonData = JSON.stringify(coadataTable.rows().data().toArray()); // Get table data as array of objects
-    console.log(jsonData)
+    const jsonData = JSON.stringify(coadataTable.rows().data().toArray());
+        console.log(jsonData)
 }
 
 
