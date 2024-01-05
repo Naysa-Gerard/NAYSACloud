@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VATController;
+use App\Http\Controllers\ChartOfAccountsController;
 use App\Support\MyFacade;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 
 Route::get("data",[VATController::class,"getdata"]);
+Route::get("coaGetData",[ChartOfAccountsController::class,"index"]);

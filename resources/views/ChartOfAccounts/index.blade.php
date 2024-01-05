@@ -11,11 +11,9 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="COAMasterDatas/Upsert?acct_code=${data}" id="ref_btn_submit" title="Submit" class='edt btn btn-success'>Submit</a><i class="fa fa-pencil"></i>
 </a>
     <div class="card">
-        <button onclick="Convert()" id="submit-to-json" class="btn btn-primary">Convert to JSON</button>
-        <button onclick="LoadRecord()" id="submit-to-json" class="btn btn-success">submit</button>
-
         <div class="card-body">
             <div class="col-12 p-1 m-0 overflow-auto">
                 <table id="ChartOfAccounts_dt" class="table table-hover table-condensed compact" style="width:100%">
@@ -48,8 +46,6 @@
 </html>
 
 <script>
-    function LoadRecord() {
-
     
   fetch('/coaGetData', { method: 'GET' })
     .then(response => response.json())
@@ -141,17 +137,13 @@
     $("#ChartOfAccounts_dt").on('column-sizing.dt', function (e, settings) {
         $(".dataTables_scrollHeadInner").css("width", "100%");
     });
-});
+} );
+      
+    
+    
 
-}
-
-function Convert(){
-    const coadataTable = $('#ChartOfAccounts_dt').DataTable();
-
-  const jsonData = JSON.stringify(coadataTable.rows().data().toArray()); // Get table data as array of objects
-    console.log(jsonData)
-}
-
+        
+        
 
 
 </script>
