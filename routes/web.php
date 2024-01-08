@@ -16,10 +16,7 @@ use App\Support\MyFacade;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/",[ChartOfAccountsController::class,"index"]);
+Route::get("coa",[ChartOfAccountsController::class,"getRecord"]);
 
 
-Route::get("data",[VATController::class,"getdata"]);
-Route::get("coaGetData",[ChartOfAccountsController::class,"index"]);

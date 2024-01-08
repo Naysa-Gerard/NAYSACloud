@@ -51,13 +51,13 @@
     function LoadRecord() {
 
     
-  fetch('/coaGetData', { method: 'GET' })
+  fetch("{{ url('coa') }}", { method: 'GET' })
     .then(response => response.json())
     .then(data => {
       const coadataTable = $('#ChartOfAccounts_dt').DataTable({
         scrollX: true,
         order: [[0, 'asc']],
-        data: data, // Use the fetched data directly
+        data: data,
         fixedColumns: {
             rightColumns: 1,
             leftColumns: 2,
